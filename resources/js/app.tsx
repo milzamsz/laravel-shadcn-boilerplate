@@ -2,6 +2,7 @@ import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Toaster } from 'sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import '../css/app.css';
 import { initializeTheme } from '@/hooks/use-appearance';
@@ -22,6 +23,7 @@ createInertiaApp({
             <StrictMode>
                 <TooltipProvider delayDuration={0}>
                     <App {...props} />
+                    <Toaster richColors closeButton />
                 </TooltipProvider>
             </StrictMode>,
         );
